@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ producto.nombre }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">{{ producto.nombre }}</h1>
+        <img src="{{ producto.imagen.url }}" class="img-fluid" alt="{{ producto.nombre }}">
+        <p>{{ producto.descripcion }}</p>
+        <p>${{ producto.precio }}</p>
+        <a href="{% url 'agregar_al_carrito' producto.id %}" class="btn btn-success">Agregar al Carrito</a>
+        <a href="/" class="btn btn-secondary">Volver</a>
+    </div>
+</body>
+</html>

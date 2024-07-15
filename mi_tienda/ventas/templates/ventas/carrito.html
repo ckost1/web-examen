@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Carrito de Compras</h1>
+        <ul class="list-group mb-4">
+            {% for producto in productos %}
+                <li class="list-group-item">
+                    {{ producto.nombre }} - ${{ producto.precio }} x {{ carrito|get_item:producto.id }}
+                </li>
+            {% endfor %}
+        </ul>
+        <h4>Total: ${{ total }}</h4>
+        <a href="/" class="btn btn-primary">Seguir Comprando</a>
+    </div>
+</body>
+</html>
